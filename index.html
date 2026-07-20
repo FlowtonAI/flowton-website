@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowton</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    background: #000000;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .wrap {
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin-bottom: 2.5rem;
+  }
+
+  form {
+    display: flex;
+    gap: 8px;
+  }
+
+  input[type="email"] {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #444;
+    color: #ffffff;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  input[type="email"]::placeholder {
+    color: #777;
+  }
+
+  input[type="email"]:focus {
+    border-color: #ffffff;
+  }
+
+  button {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  button:hover {
+    background: #dddddd;
+  }
+
+  .note {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .success {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    color: #9ae6a4;
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>We'll be back shortly.</h1>
+
+    <form id="contactForm">
+      <input type="email" id="emailInput" name="email" placeholder="Your email" required>
+      <button type="submit">Notify me</button>
+    </form>
+
+    <p class="success" id="successMsg">Thanks — we'll be in touch.</p>
+    <p class="note">Or email us directly at <a href="mailto:contact@flowton.ch" style="color:#999;">contact@flowton.ch</a></p>
+  </div>
+
+  <script>
+    // Replace YOUR_FORM_ID with your Formspree form ID (formspree.io — free, 2 min setup)
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value;
+
+      if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+        // Fallback until Formspree is configured: open mail client instead
+        window.location.href = `mailto:contact@flowton.ch?subject=Contact from flowton.io&body=Please reach out to: ${encodeURIComponent(email)}`;
+        return;
+      }
+
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          window.location.href = `mailto:contact@flowton.ch?subject=Contact from flowton.io&body=Please reach out to: ${encodeURIComponent(email)}`;
+        }
+      } catch (err) {
+        window.location.href = `mailto:contact@flowton.ch?subject=Contact from flowton.io&body=Please reach out to: ${encodeURIComponent(email)}`;
+      }
+    });
+  </script>
+</body>
+</html>
