@@ -1,7 +1,7 @@
 // Strings the script writes itself, per page language (<html lang>)
 const strings = {
-  de: { locale: 'de-CH', hours: 'Std.', subject: 'Zeitfresser-Check: ', company: 'Betrieb', phone: 'Telefon' },
-  en: { locale: 'en-CH', hours: 'hrs', subject: 'Time-Waster Check: ', company: 'Company', phone: 'Phone' }
+  de: { locale: 'de-CH', hours: 'Std.', subject: 'Warteliste: ', company: 'Betrieb', email: 'E-Mail', phone: 'Telefon' },
+  en: { locale: 'en-CH', hours: 'hrs', subject: 'Waitlist: ', company: 'Company', email: 'Email', phone: 'Phone' }
 };
 const copy = strings[document.documentElement.lang.slice(0, 2)] || strings.de;
 
@@ -41,34 +41,35 @@ const updateCalc = () => {
 hours.addEventListener('input', updateCalc);
 updateCalc();
 
-// Contact form. Replace YOUR_FORM_ID with your Formspree form ID (formspree.io, free, 2 min setup)
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+// Waitlist form. FormSubmit forwards each entry to this address by email, no account needed.
+// The very first entry triggers an "Activate Form" email to contact@flowton.ch; click it once.
+// Until then (or if the service is down) the form falls back to opening the visitor's mail app.
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@flowton.ch';
 
 const form = document.getElementById('contactForm');
 const successMsg = document.getElementById('successMsg');
 
 const mailtoFallback = () => {
   const d = new FormData(form);
-  const body = `Name: ${d.get('name')}\n${copy.company}: ${d.get('company')}\n${copy.phone}: ${d.get('phone')}\n\n${d.get('message')}`;
+  const body = `Name: ${d.get('name')}\n${copy.company}: ${d.get('company')}\n${copy.email}: ${d.get('email')}\n${copy.phone}: ${d.get('phone')}\n\n${d.get('message')}`;
   window.location.href = `mailto:contact@flowton.ch?subject=${encodeURIComponent(copy.subject + d.get('company'))}&body=${encodeURIComponent(body)}`;
 };
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
-    // Fallback until Formspree is configured: open mail client instead
-    mailtoFallback();
-    return;
-  }
+  const data = new FormData(form);
+  data.append('_subject', copy.subject + data.get('company'));
+  data.append('_template', 'table');
 
   try {
-    const res = await fetch(FORMSPREE_ENDPOINT, {
+    const res = await fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
+      body: data
     });
-    if (res.ok) {
+    const json = await res.json().catch(() => ({}));
+    if (res.ok && String(json.success) === 'true') {
       form.style.display = 'none';
       successMsg.style.display = 'block';
     } else {

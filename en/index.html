@@ -52,7 +52,7 @@
         <a href="/" lang="de" hreflang="de">DE</a>
         <a href="/en/" lang="en" aria-current="page">EN</a>
       </div>
-      <a href="#kontakt" class="btn btn-ghost">Free check</a>
+      <a href="#kontakt" class="btn btn-ghost">Waitlist</a>
     </div>
   </nav>
 
@@ -64,8 +64,8 @@
         <span class="label">[ For plumbing, heating &amp; electrical in Eastern Switzerland ]</span>
         <h1>Less office.<br><span class="grad">More job site.</span></h1>
         <p class="lead">Flowton builds your <strong>website</strong> and automates what comes after: <strong>calls, quotes and job reports</strong>. For building-services firms with 5 to 50 people. You work the way you always have, just without the evening shift in the office.</p>
-        <a href="#kontakt" class="btn btn-primary">Book your free Time-Waster Check <span class="arrow">→</span></a>
-        <p class="micro">30 minutes · free · on site or by phone</p>
+        <a href="#kontakt" class="btn btn-primary">Join the waitlist <span class="arrow">→</span></a>
+        <p class="micro"><span class="status-dot"></span>Currently at capacity · waitlist open · free, no obligation</p>
         <div class="hero-foot">
           <span class="loc"><span class="dot"></span>Based in St. Gallen, serving firms across Eastern Switzerland</span>
           <img class="ssa-badge" src="/assets/swiss-startup-association.svg" alt="Member of the Swiss Startup Association" width="90" height="56">
@@ -311,8 +311,8 @@
           <div class="step reveal">
             <div class="n">2</div>
             <h3>Fixed price and build</h3>
-            <p>You get a written fixed price before we build anything. No hourly rate, no surprises. Your website or first automation is usually live after two weeks.</p>
-            <span class="tag">approx. 2 weeks</span>
+            <p>You get a written fixed price before we build anything. No hourly rate, no surprises.</p>
+            <span class="tag">Fixed price</span>
           </div>
           <div class="step reveal">
             <div class="n">3</div>
@@ -331,8 +331,8 @@
           <div class="seal"><span>TIME<br>GUARANTEE</span></div>
           <h2>No time saved, <span class="grad">no money.</span></h2>
           <p class="lead">In the Time-Waster Check, we agree together how many hours per week the automation should save. If it doesn't hit that after 60 days, you get your money back in full.</p>
-          <p class="scarce">Because we set up every firm personally, we take on at most three new firms per month.</p>
-          <a href="#kontakt" class="btn btn-primary">Book your free Time-Waster Check <span class="arrow">→</span></a>
+          <p class="scarce">Because we set up every firm personally, our capacity is limited. We're currently at capacity and take on new firms in order through the waitlist.</p>
+          <a href="#kontakt" class="btn btn-primary">Join the waitlist <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -375,6 +375,10 @@
         </div>
         <div class="faq reveal">
           <details>
+            <summary>Why is there a waitlist?</summary>
+            <p>Because we set up and support every firm personally. We only take on as many firms as we can look after well. Everyone who signs up hears from us in order, starting with the free check.</p>
+          </details>
+          <details>
             <summary>What does it cost?</summary>
             <p>That depends on what gets automated. That's why you get a written fixed price after the free check, before we build anything. And the time guarantee applies: if the automation doesn't save the agreed time, you get your money back.</p>
           </details>
@@ -407,12 +411,12 @@
       <div class="container">
         <div class="contact reveal">
           <div>
-            <span class="label">[ Free Time-Waster Check ]</span>
-            <h2>Let's find your <span class="grad">time-wasters.</span></h2>
-            <p class="lead">You get a list of your three biggest time-wasters, with a franc amount, and an honest assessment of your website. Whether or not you work with us afterwards.</p>
+            <span class="label">[ Waitlist ]</span>
+            <h2>Secure <span class="grad">your spot.</span></h2>
+            <p class="lead">We're currently at capacity and take on new firms in order. Sign up with no obligation. As soon as a spot opens up, we'll get in touch for your free check.</p>
             <ul class="checks">
-              <li>30 minutes, on site or by phone</li>
               <li>Free, no obligation</li>
+              <li>Free check of your three biggest time-wasters</li>
               <li>Fixed price before we build anything</li>
             </ul>
             <div class="map">
@@ -424,12 +428,14 @@
             <form id="contactForm">
               <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
               <div class="field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization" required></div>
-              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="phone">Phone <span style="color:var(--muted-2)">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+              <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
               <div class="field"><label for="message">What eats up most of your time? <span style="color:var(--muted-2)">(optional)</span></label><textarea id="message" name="message"></textarea></div>
-              <button type="submit" class="btn btn-primary">Request your check <span class="arrow">→</span></button>
-              <p class="form-note">We'll call you back within one working day. Prefer email? <a href="mailto:contact@flowton.ch">contact@flowton.ch</a></p>
+              <button type="submit" class="btn btn-primary">Join the waitlist <span class="arrow">→</span></button>
+              <p class="form-note">We only use your details to get in touch with you (<a href="/datenschutz/">privacy policy, in German</a>). Prefer email? <a href="mailto:contact@flowton.ch">contact@flowton.ch</a></p>
             </form>
-            <p class="success" id="successMsg">Thanks! We'll get back to you within one working day.</p>
+            <p class="success" id="successMsg">Thanks! You're on the waitlist. We'll get back to you personally as soon as a spot opens up.</p>
           </div>
         </div>
       </div>
@@ -442,7 +448,7 @@
       <span>Automation for building-services firms · St. Gallen</span>
       <a href="mailto:contact@flowton.ch">contact@flowton.ch</a>
       <a href="https://swissstartupassociation.ch" target="_blank" rel="noopener"><img class="ssa-badge" src="/assets/swiss-startup-association.svg" alt="Member of the Swiss Startup Association" width="72" height="45" style="height: 45px;"></a>
-      <span>© 2026 Steiner Flowton</span>
+      <span>© 2026 Steiner Flowton · <a href="/impressum/" hreflang="de">Legal notice</a> · <a href="/datenschutz/" hreflang="de">Privacy</a></span>
     </div>
   </footer>
 

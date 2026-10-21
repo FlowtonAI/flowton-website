@@ -52,7 +52,7 @@
         <a href="/" lang="de" aria-current="page">DE</a>
         <a href="/en/" lang="en" hreflang="en">EN</a>
       </div>
-      <a href="#kontakt" class="btn btn-ghost">Gratis-Check</a>
+      <a href="#kontakt" class="btn btn-ghost">Warteliste</a>
     </div>
   </nav>
 
@@ -64,8 +64,8 @@
         <span class="label">[ Für Sanitär, Heizung &amp; Elektro in der Ostschweiz ]</span>
         <h1>Weniger Büro.<br><span class="grad">Mehr Baustelle.</span></h1>
         <p class="lead">Flowton baut Ihre <strong>Website</strong> und automatisiert, was danach kommt: <strong>Anrufe, Offerten und Rapporte</strong>. Für Haustechnik-Betriebe mit 5 bis 50 Leuten. Sie arbeiten wie bisher, nur ohne Abendschicht im Büro.</p>
-        <a href="#kontakt" class="btn btn-primary">Gratis Zeitfresser-Check buchen <span class="arrow">→</span></a>
-        <p class="micro">30 Minuten · kostenlos · vor Ort oder am Telefon</p>
+        <a href="#kontakt" class="btn btn-primary">Platz auf der Warteliste sichern <span class="arrow">→</span></a>
+        <p class="micro"><span class="status-dot"></span>Aktuell ausgelastet · Warteliste offen · kostenlos und unverbindlich</p>
         <div class="hero-foot">
           <span class="loc"><span class="dot"></span>Aus St. Gallen, für Betriebe in der ganzen Ostschweiz</span>
           <img class="ssa-badge" src="/assets/swiss-startup-association.svg" alt="Mitglied der Swiss Startup Association" width="90" height="56">
@@ -311,8 +311,8 @@
           <div class="step reveal">
             <div class="n">2</div>
             <h3>Fixpreis und Umsetzung</h3>
-            <p>Sie bekommen einen schriftlichen Fixpreis, bevor wir etwas bauen. Kein Stundensatz, keine Überraschungen. Ihre Website oder erste Automatisierung steht in der Regel nach zwei Wochen.</p>
-            <span class="tag">ca. 2 Wochen</span>
+            <p>Sie bekommen einen schriftlichen Fixpreis, bevor wir etwas bauen. Kein Stundensatz, keine Überraschungen.</p>
+            <span class="tag">Fixpreis</span>
           </div>
           <div class="step reveal">
             <div class="n">3</div>
@@ -331,8 +331,8 @@
           <div class="seal"><span>ZEIT-<br>GARANTIE</span></div>
           <h2>Keine gesparte Zeit, <span class="grad">kein Geld.</span></h2>
           <p class="lead">Im Zeitfresser-Check legen wir gemeinsam fest, wie viele Stunden pro Woche die Automatisierung sparen soll. Schafft sie das nach 60 Tagen nicht, bekommen Sie den vollen Betrag zurück.</p>
-          <p class="scarce">Weil wir jeden Betrieb persönlich aufsetzen, nehmen wir pro Monat höchstens drei neue Betriebe an.</p>
-          <a href="#kontakt" class="btn btn-primary">Gratis Zeitfresser-Check buchen <span class="arrow">→</span></a>
+          <p class="scarce">Weil wir jeden Betrieb persönlich aufsetzen, ist unsere Kapazität begrenzt. Zurzeit sind wir ausgelastet und nehmen neue Betriebe der Reihe nach über die Warteliste auf.</p>
+          <a href="#kontakt" class="btn btn-primary">Platz auf der Warteliste sichern <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -375,6 +375,10 @@
         </div>
         <div class="faq reveal">
           <details>
+            <summary>Warum gibt es eine Warteliste?</summary>
+            <p>Weil wir jeden Betrieb persönlich aufsetzen und betreuen. Wir nehmen nur so viele Betriebe an, wie wir gut begleiten können. Wer sich einträgt, hört der Reihe nach von uns, mit dem Gratis-Check als erstem Schritt.</p>
+          </details>
+          <details>
             <summary>Was kostet das?</summary>
             <p>Das hängt davon ab, was automatisiert wird. Deshalb bekommen Sie nach dem Gratis-Check einen schriftlichen Fixpreis, bevor wir etwas bauen. Dazu gilt die Zeit-Garantie: Spart die Automatisierung nicht die vereinbarte Zeit, bekommen Sie Ihr Geld zurück.</p>
           </details>
@@ -407,12 +411,12 @@
       <div class="container">
         <div class="contact reveal">
           <div>
-            <span class="label">[ Gratis Zeitfresser-Check ]</span>
-            <h2>Finden wir Ihre <span class="grad">Zeitfresser.</span></h2>
-            <p class="lead">Sie bekommen die Liste Ihrer drei grössten Zeitfresser mit Franken-Betrag und eine ehrliche Einschätzung Ihrer Website. Egal, ob Sie danach mit uns arbeiten.</p>
+            <span class="label">[ Warteliste ]</span>
+            <h2>Sichern Sie sich <span class="grad">Ihren Platz.</span></h2>
+            <p class="lead">Wir sind zurzeit ausgelastet und nehmen neue Betriebe der Reihe nach auf. Tragen Sie sich unverbindlich ein. Sobald ein Platz frei ist, melden wir uns für Ihren Gratis-Check.</p>
             <ul class="checks">
-              <li>30 Minuten, vor Ort oder am Telefon</li>
               <li>Kostenlos und unverbindlich</li>
+              <li>Gratis-Check mit Ihren drei grössten Zeitfressern</li>
               <li>Fixpreis, bevor wir etwas bauen</li>
             </ul>
             <div class="map">
@@ -424,12 +428,14 @@
             <form id="contactForm">
               <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
               <div class="field"><label for="company">Betrieb</label><input id="company" name="company" autocomplete="organization" required></div>
-              <div class="field"><label for="phone">Telefon</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="field"><label for="email">E-Mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="phone">Telefon <span style="color:var(--muted-2)">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+              <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
               <div class="field"><label for="message">Was frisst bei Ihnen am meisten Zeit? <span style="color:var(--muted-2)">(optional)</span></label><textarea id="message" name="message"></textarea></div>
-              <button type="submit" class="btn btn-primary">Check anfragen <span class="arrow">→</span></button>
-              <p class="form-note">Wir rufen Sie innert eines Arbeitstages zurück. Lieber per E-Mail? <a href="mailto:contact@flowton.ch">contact@flowton.ch</a></p>
+              <button type="submit" class="btn btn-primary">Auf die Warteliste <span class="arrow">→</span></button>
+              <p class="form-note">Wir verwenden Ihre Angaben nur, um mit Ihnen Kontakt aufzunehmen (<a href="/datenschutz/">Datenschutz</a>). Lieber per E-Mail? <a href="mailto:contact@flowton.ch">contact@flowton.ch</a></p>
             </form>
-            <p class="success" id="successMsg">Danke! Wir melden uns innert eines Arbeitstages bei Ihnen.</p>
+            <p class="success" id="successMsg">Danke! Sie stehen auf der Warteliste. Wir melden uns persönlich, sobald ein Platz frei ist.</p>
           </div>
         </div>
       </div>
@@ -442,7 +448,7 @@
       <span>Automatisierung für Haustechnik-Betriebe · St. Gallen</span>
       <a href="mailto:contact@flowton.ch">contact@flowton.ch</a>
       <a href="https://swissstartupassociation.ch" target="_blank" rel="noopener"><img class="ssa-badge" src="/assets/swiss-startup-association.svg" alt="Mitglied der Swiss Startup Association" width="72" height="45" style="height: 45px;"></a>
-      <span>© 2026 Steiner Flowton</span>
+      <span>© 2026 Steiner Flowton · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></span>
     </div>
   </footer>
 
