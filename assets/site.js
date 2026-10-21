@@ -3,7 +3,7 @@ const strings = {
   de: { locale: 'de-CH', hours: 'Std.', subject: 'Zeitfresser-Check: ', company: 'Betrieb', phone: 'Telefon' },
   en: { locale: 'en-CH', hours: 'hrs', subject: 'Time-Waster Check: ', company: 'Company', phone: 'Phone' }
 };
-const t = strings[document.documentElement.lang.slice(0, 2)] || strings.de;
+const copy = strings[document.documentElement.lang.slice(0, 2)] || strings.de;
 
 // Language switch keeps the current section (#kontakt etc.) when changing language
 document.querySelectorAll('.lang a').forEach((a) => {
@@ -29,11 +29,11 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
 // Cost calculator: hours/week × 45 weeks × CHF 50
 const hours = document.getElementById('hours');
-const fmt = (n) => n.toLocaleString(t.locale);
+const fmt = (n) => n.toLocaleString(copy.locale);
 const updateCalc = () => {
   const h = Number(hours.value);
   const yearlyHours = h * 45;
-  document.getElementById('hoursOut').textContent = h + ' ' + t.hours;
+  document.getElementById('hoursOut').textContent = h + ' ' + copy.hours;
   document.getElementById('costOut').textContent = 'CHF ' + fmt(yearlyHours * 50);
   document.getElementById('daysOut').textContent = fmt(Math.round(yearlyHours / 8.4));
   hours.style.setProperty('--fill', ((h - hours.min) / (hours.max - hours.min)) * 100 + '%');
@@ -49,8 +49,8 @@ const successMsg = document.getElementById('successMsg');
 
 const mailtoFallback = () => {
   const d = new FormData(form);
-  const body = `Name: ${d.get('name')}\n${t.company}: ${d.get('company')}\n${t.phone}: ${d.get('phone')}\n\n${d.get('message')}`;
-  window.location.href = `mailto:contact@flowton.ch?subject=${encodeURIComponent(t.subject + d.get('company'))}&body=${encodeURIComponent(body)}`;
+  const body = `Name: ${d.get('name')}\n${copy.company}: ${d.get('company')}\n${copy.phone}: ${d.get('phone')}\n\n${d.get('message')}`;
+  window.location.href = `mailto:contact@flowton.ch?subject=${encodeURIComponent(copy.subject + d.get('company'))}&body=${encodeURIComponent(body)}`;
 };
 
 form.addEventListener('submit', async (e) => {
