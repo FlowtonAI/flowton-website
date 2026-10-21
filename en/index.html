@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowton – Automation for building-services firms in Eastern Switzerland</title>
+<meta name="description" content="Flowton automates calls, quotes and job reports for plumbing, heating and electrical firms in Eastern Switzerland. Based in St. Gallen. Free 30-minute Time-Waster Check.">
+<meta name="theme-color" content="#07060d">
+<link rel="icon" type="image/png" href="/assets/icon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Flowton – Less office. More job site.">
+<meta property="og:description" content="Automation for plumbing, heating and electrical firms in Eastern Switzerland.">
+<meta property="og:image" content="https://flowton.ch/assets/logo.png">
+<meta property="og:locale" content="en_GB">
+<link rel="canonical" href="https://www.flowton.ch/en/">
+<link rel="alternate" hreflang="de-CH" href="https://www.flowton.ch/">
+<link rel="alternate" hreflang="en" href="https://www.flowton.ch/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.flowton.ch/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Flowton",
+  "legalName": "Steiner Flowton",
+  "url": "https://flowton.ch/en/",
+  "logo": "https://flowton.ch/assets/logo.png",
+  "email": "contact@flowton.ch",
+  "description": "Automation for plumbing, heating and electrical firms in Eastern Switzerland.",
+  "address": { "@type": "PostalAddress", "addressLocality": "St. Gallen", "addressCountry": "CH" },
+  "areaServed": ["St. Gallen", "Thurgau", "Appenzell Ausserrhoden", "Appenzell Innerrhoden", "Graubünden"]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <script>document.documentElement.classList.add('js');</script>
+
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <a href="#" class="brand"><img src="/assets/icon.png" alt="" width="34" height="34"><span>Flowton</span></a>
+    <div class="nav-links">
+      <a href="#loesungen">Solutions</a>
+      <a href="#ablauf">Process</a>
+      <a href="#garantie">Guarantee</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/" lang="de" hreflang="de">DE</a>
+        <a href="/en/" lang="en" aria-current="page">EN</a>
+      </div>
+      <a href="#kontakt" class="btn btn-ghost">Free check</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <canvas id="waves" aria-hidden="true"></canvas>
+      <div class="container">
+        <span class="label">[ For plumbing, heating &amp; electrical in Eastern Switzerland ]</span>
+        <h1>Less office.<br><span class="grad">More job site.</span></h1>
+        <p class="lead">Flowton automates <strong>calls, quotes and job reports</strong> for building-services firms with 5 to 50 people. You work the way you always have. Just without the evening shift in the office.</p>
+        <a href="#kontakt" class="btn btn-primary">Book your free Time-Waster Check <span class="arrow">→</span></a>
+        <p class="micro">30 minutes · free · on site or by phone</p>
+        <div class="hero-foot">
+          <span class="loc"><span class="dot"></span>Based in St. Gallen, serving firms across Eastern Switzerland</span>
+          <img class="ssa-badge" src="/assets/swiss-startup-association.svg" alt="Member of the Swiss Startup Association" width="90" height="56">
+        </div>
+      </div>
+    </section>
+
+    <!-- Pains -->
+    <section id="problem">
+      <div class="container">
+        <div class="pains-title reveal">
+          <span class="label">[ Everyday life ]</span>
+          <h2>Sound <span class="grad">familiar?</span></h2>
+        </div>
+        <div class="pains">
+          <div class="pain reveal">
+            <span class="num">01</span>
+            <h3>The phone rings while you're lying under a sink.</h3>
+            <p>The customer doesn't wait for a callback. They dial the next number on the list.</p>
+          </div>
+          <div class="pain reveal">
+            <span class="num">02</span>
+            <h3>You write quotes on Saturdays.</h3>
+            <p>By the time it reaches the customer, a week has passed. And they asked two other firms too.</p>
+          </div>
+          <div class="pain reveal">
+            <span class="num">03</span>
+            <h3>The job reports sit on the passenger seat.</h3>
+            <p>The invoice goes out weeks after the job. The money arrives just as late.</p>
+          </div>
+          <div class="pain reveal">
+            <span class="num">04</span>
+            <h3>You type up delivery notes by hand.</h3>
+            <p>Line by line, item by item. And one typo eats your margin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section id="rechner" style="padding-top: 0;">
+      <div class="container">
+        <div class="calc reveal">
+          <div>
+            <span class="label">[ Do the math ]</span>
+            <h2>What does the office <span class="grad">cost you?</span></h2>
+            <p class="lead">How many hours a week go into quotes, reports, invoices and callbacks? Yours and your office's combined.</p>
+          </div>
+          <div class="calc-box">
+            <label for="hours">Office hours per week <output id="hoursOut" for="hours">8 hrs</output></label>
+            <input type="range" id="hours" min="1" max="40" value="8" step="1">
+            <div class="calc-result" aria-live="polite">
+              <div class="big"><span class="grad" id="costOut">CHF 18’000</span></div>
+              <p class="sub">per year. That's <strong id="daysOut">43</strong> full working days, before counting a single missed job.</p>
+            </div>
+            <p class="calc-note">Calculated at CHF 50 per hour (Swiss median wage 2024 according to the Federal Statistical Office, plus employer contributions) and 45 working weeks per year.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section id="loesungen">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="label">[ What we build ]</span>
+            <h2>Three workflows that <span class="grad">run themselves.</span></h2>
+          </div>
+          <p class="lead reveal">We start where you lose the most time. Usually it's one of these three.</p>
+        </div>
+
+        <div class="solutions">
+          <article class="sol reveal">
+            <div class="sol-visual" aria-hidden="true">
+              <div class="chip alert">Missed call · 079 ··· ·· 14</div>
+              <div class="chip out"><small>Automatic SMS · 10:42</small>We're on a job site. Send us your address and the problem, and we'll call back within 2 hours.</div>
+              <div class="chip in"><small>Reply · 10:44</small>Boiler leaking, Rosenbergstrasse 12</div>
+            </div>
+            <div class="sol-body">
+              <h3>No call gets lost.</h3>
+              <p>Miss a call and the customer instantly gets a text. They reply with their address and the problem, and you get a clean note on your phone. If you like, an AI assistant can take the call directly.</p>
+            </div>
+          </article>
+
+          <article class="sol reveal">
+            <div class="sol-visual" aria-hidden="true">
+              <div class="flow-row">
+                <div class="chip">
+                  <small>Voice note · 0:42</small>
+                  <div class="voice"><i style="height:8px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:12px"></i><i style="height:18px"></i><i style="height:9px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:7px"></i><i style="height:17px"></i><i style="height:11px"></i><i style="height:19px"></i></div>
+                </div>
+                <div class="thumbs"><span></span><span></span></div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="doc">
+                <b>Quote · Draft</b>
+                <div class="ln"></div><div class="ln s"></div><div class="ln"></div><div class="ln s"></div>
+                <div class="tot"><span>Total</span><span>CHF 8’450</span></div>
+              </div>
+            </div>
+            <div class="sol-body">
+              <h3>The quote goes out the same day.</h3>
+              <p>At the appointment, you speak a note into your phone and take photos. That becomes a draft quote with your prices in your template. You check it in ten minutes that evening and send it.</p>
+            </div>
+          </article>
+
+          <article class="sol reveal">
+            <div class="sol-visual" aria-hidden="true">
+              <div class="flow-row">
+                <div class="chip"><small>Report.jpg</small>Install 4.5 hrs<br>2× mixer, 1× trap</div>
+                <div class="flow-arrow">→</div>
+                <div class="doc">
+                  <b>Invoice · Draft</b>
+                  <div class="ln"></div><div class="ln s"></div><div class="ln"></div>
+                  <div class="qr"></div>
+                </div>
+              </div>
+            </div>
+            <div class="sol-body">
+              <h3>Report in, invoice out.</h3>
+              <p>Snap a photo of job reports and delivery notes, or forward them by email. They become a draft invoice with a QR code, right in your accounting software. No more typing them up line by line.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Done for you -->
+    <section id="ki-abteilung" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="label">[ Your AI department ]</span>
+            <h2>You do building services. <span class="grad">We do the AI.</span></h2>
+          </div>
+          <p class="lead reveal">You don't need to know what ChatGPT, Zapier or a language model is. That's what we're for. We're your AI department, without you having to hire anyone.</p>
+        </div>
+        <div class="split">
+          <div class="side reveal">
+            <span class="who-tag">Your part</span>
+            <h3>Almost nothing.</h3>
+            <ul>
+              <li>Spend 30 minutes telling us where it hurts</li>
+              <li>Check the drafts and send them</li>
+              <li>Get on with your work</li>
+            </ul>
+          </div>
+          <div class="side ours reveal">
+            <span class="who-tag">Our part</span>
+            <h3>Everything else.</h3>
+            <ul>
+              <li>Pick the right tools</li>
+              <li>Set everything up and connect it to your software</li>
+              <li>Train your team</li>
+              <li>Monitor the workflows and fix problems</li>
+              <li>Keep everything current as AI evolves</li>
+            </ul>
+            <p class="foot-note"><strong>Heard about a new AI tool?</strong> Call us. We'll tell you honestly whether it helps your business.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="ablauf" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="label">[ How it works ]</span>
+            <h2>Three steps <span class="grad">back to the job site.</span></h2>
+          </div>
+          <p class="lead reveal">You don't learn any new software. We build on what you already use: phone, email, accounting.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="n">1</div>
+            <h3>Time-Waster Check</h3>
+            <p>30 minutes, free. We look at how you work and show you your three biggest time-wasters, with a franc amount. The list is yours to keep, even if you don't work with us.</p>
+            <span class="tag">Free</span>
+          </div>
+          <div class="step reveal">
+            <div class="n">2</div>
+            <h3>Fixed price and build</h3>
+            <p>You get a written fixed price before we build anything. No hourly rate, no surprises. The first automation is usually running after two weeks.</p>
+            <span class="tag">approx. 2 weeks</span>
+          </div>
+          <div class="step reveal">
+            <div class="n">3</div>
+            <h3>Rollout and support</h3>
+            <p>We show your team how everything works in one hour. After that, we monitor the workflows and adjust them when something changes on your end.</p>
+            <span class="tag">Ongoing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section id="garantie" style="padding-top: 0;">
+      <div class="container">
+        <div class="guarantee reveal">
+          <div class="seal"><span>TIME<br>GUARANTEE</span></div>
+          <h2>No time saved, <span class="grad">no money.</span></h2>
+          <p class="lead">In the Time-Waster Check, we agree together how many hours per week the automation should save. If it doesn't hit that after 60 days, you get your money back in full.</p>
+          <p class="scarce">Because we set up every firm personally, we take on at most three new firms per month.</p>
+          <a href="#kontakt" class="btn btn-primary">Book your free Time-Waster Check <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section id="ueber-uns" style="padding-top: 0;">
+      <div class="container founder">
+        <div class="reveal">
+          <span class="label">[ Who's behind it ]</span>
+          <h2>From control cabinets <span class="grad">to code.</span></h2>
+          <p class="quote">“I trained as a polymechanic and wired control cabinets during my apprenticeship. Today I build software. I know nobody in a trades business has time to learn a new program. So the automation has to fit your day, not the other way around.”</p>
+          <div class="who">
+            <div class="avatar">MS</div>
+            <div><b>Marlon Steiner</b><span>Founder, St. Gallen</span></div>
+          </div>
+        </div>
+        <div class="principles">
+          <div class="principle reveal">
+            <div class="ic" aria-hidden="true">✓</div>
+            <div><h3>AI writes drafts. You decide.</h3><p>No quote or invoice goes to a customer without your OK.</p></div>
+          </div>
+          <div class="principle reveal">
+            <div class="ic" aria-hidden="true">⌂</div>
+            <div><h3>Your software stays.</h3><p>We connect what you already have. Your team doesn't have to relearn anything.</p></div>
+          </div>
+          <div class="principle reveal">
+            <div class="ic" aria-hidden="true">⌖</div>
+            <div><h3>In person in Eastern Switzerland.</h3><p>We come to you, whether in St. Gallen, Thurgau, Appenzell or the Rhine Valley.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="padding-top: 0;">
+      <div class="container faq-wrap">
+        <div class="reveal">
+          <span class="label">[ FAQ ]</span>
+          <h2>Good <span class="grad">questions.</span></h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>What does it cost?</summary>
+            <p>That depends on what gets automated. That's why you get a written fixed price after the free check, before we build anything. And the time guarantee applies: if the automation doesn't save the agreed time, you get your money back.</p>
+          </details>
+          <details>
+            <summary>Is it worth it for a firm of six people?</summary>
+            <p>Especially then. In small firms, the owner often does the office work themselves, in the evening. Move the calculator above to your hours and see what comes out.</p>
+          </details>
+          <details>
+            <summary>Do we need new software?</summary>
+            <p>No. We build on what you already use: your phone, your email, your accounting software and your quote template.</p>
+          </details>
+          <details>
+            <summary>Does the AI understand Swiss German?</summary>
+            <p>Partly. Speech AI still struggles more with dialect than with Standard German. So the phone assistant confirms key details like the address with the caller, and voice notes for quotes work best in Standard German or English. We'd rather tell you before than after.</p>
+          </details>
+          <details>
+            <summary>What happens to our customers' data?</summary>
+            <p>We follow Swiss data protection law. Before anything goes live, we show you which data goes where. And your customers always know when they're talking to an assistant rather than a person.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="kontakt" style="padding-top: 0;">
+      <div class="container">
+        <div class="contact reveal">
+          <div>
+            <span class="label">[ Free Time-Waster Check ]</span>
+            <h2>Let's find your <span class="grad">time-wasters.</span></h2>
+            <p class="lead">You get a list of your three biggest time-wasters, with a franc amount. Whether or not you work with us afterwards.</p>
+            <ul class="checks">
+              <li>30 minutes, on site or by phone</li>
+              <li>Free, no obligation</li>
+              <li>Fixed price before we build anything</li>
+            </ul>
+          </div>
+          <div>
+            <form id="contactForm">
+              <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization" required></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="field"><label for="message">What eats up most of your time? <span style="color:var(--muted-2)">(optional)</span></label><textarea id="message" name="message"></textarea></div>
+              <button type="submit" class="btn btn-primary">Request your check <span class="arrow">→</span></button>
+              <p class="form-note">We'll call you back within one working day. Prefer email? <a href="mailto:contact@flowton.ch">contact@flowton.ch</a></p>
+            </form>
+            <p class="success" id="successMsg">Thanks! We'll get back to you within one working day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <a href="#" class="brand"><img src="/assets/icon.png" alt="" width="34" height="34"><span>Flowton</span></a>
+      <span>Automation for building-services firms · St. Gallen</span>
+      <a href="mailto:contact@flowton.ch">contact@flowton.ch</a>
+      <a href="https://swissstartupassociation.ch" target="_blank" rel="noopener"><img class="ssa-badge" src="/assets/swiss-startup-association.svg" alt="Member of the Swiss Startup Association" width="72" height="45" style="height: 45px;"></a>
+      <span>© 2026 Steiner Flowton</span>
+    </div>
+  </footer>
+
+  <script src="/assets/site.js"></script>
+</body>
+</html>
