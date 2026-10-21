@@ -49,17 +49,20 @@ const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@flowton.ch';
 const form = document.getElementById('contactForm');
 const successMsg = document.getElementById('successMsg');
 
+// Company is optional, so the email subject falls back to the person's name
+const subjectFor = (d) => copy.subject + (d.get('company') || d.get('name'));
+
 const mailtoFallback = () => {
   const d = new FormData(form);
   const body = `Name: ${d.get('name')}\n${copy.company}: ${d.get('company')}\n${copy.email}: ${d.get('email')}\n${copy.phone}: ${d.get('phone')}\n\n${d.get('message')}`;
-  window.location.href = `mailto:contact@flowton.ch?subject=${encodeURIComponent(copy.subject + d.get('company'))}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:contact@flowton.ch?subject=${encodeURIComponent(subjectFor(d))}&body=${encodeURIComponent(body)}`;
 };
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const data = new FormData(form);
-  data.append('_subject', copy.subject + data.get('company'));
+  data.append('_subject', subjectFor(data));
   data.append('_template', 'table');
 
   try {
