@@ -263,7 +263,9 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px 
 .calc-result { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); }
 .calc-result .big { font-size: clamp(2.4rem, 5vw, 3.5rem); letter-spacing: -0.03em; line-height: 1.1; font-weight: 500; }
 .calc-result .sub { color: var(--muted); margin-top: 8px; }
-.calc-note { color: var(--muted-2); font-size: 0.8rem; margin-top: 24px; }
+/* Offer right where the cost lands */
+.calc-cta { width: 100%; justify-content: center; margin-top: 24px; }
+.calc-note { color: var(--muted-2); font-size: 0.8rem; margin-top: 20px; }
 
 /* Solutions */
 .solutions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -454,7 +456,7 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px 
 .quote { max-width: 820px; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.45; letter-spacing: -0.01em; color: #e6e2f2; margin: 32px auto 28px; }
 
 /* Founder photo, large and in its own format, with the name as a caption */
-.portrait { max-width: 720px; margin: 40px auto 0; }
+.portrait { max-width: 480px; margin: 40px auto 0; }
 .portrait img { display: block; width: 100%; height: auto; border-radius: 24px; border: 1px solid var(--line-2); box-shadow: 0 30px 80px -30px rgba(124, 58, 237, 0.45); }
 .portrait figcaption { margin-top: 18px; }
 .portrait figcaption b { display: block; font-size: 1.15rem; font-weight: 600; }
@@ -470,9 +472,12 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px 
 .creds-label { display: block; margin-bottom: 12px; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .creds-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .cred { display: grid; place-items: center; height: 88px; padding: 0 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); }
-.cred img { display: block; height: 32px; width: auto; max-width: 100%; object-fit: contain; }
-/* The ETH logo has two rows, so it needs more height for its small line to stay readable */
-.cred img.tall { height: 46px; }
+/* Sized for equal visual width (~95–115px), not equal height: the shield makes CS50 look
+   narrow, the two-row ETH logo looks big at the same height */
+.cred img { display: block; width: auto; max-width: 100%; object-fit: contain; }
+.cred img.cs50 { height: 36px; }
+.cred img.lw { height: 32px; }
+.cred img.eth { height: 40px; }
 
 .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: left; }
 .principle { display: flex; gap: 18px; padding: 24px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); }
@@ -592,8 +597,9 @@ footer { padding: 48px 0 40px; border-top: 1px solid var(--line); margin-top: 40
   .refs { grid-template-columns: 1fr; }
   .creds-row { gap: 8px; }
   .cred { height: 64px; padding: 0 8px; }
-  .cred img { height: 22px; }
-  .cred img.tall { height: 32px; }
+  .cred img.cs50 { height: 25px; }
+  .cred img.lw { height: 22px; }
+  .cred img.eth { height: 28px; }
   .side { padding: 28px 20px; }
   .side h3 { margin-bottom: 20px; }
   .hero-foot { margin-top: 48px; gap: 16px; }
