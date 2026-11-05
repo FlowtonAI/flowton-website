@@ -358,7 +358,7 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px 
 .sol-visual .browser + .chip { align-self: flex-end; max-width: 190px; margin-top: -14px; position: relative; }
 
 /* References */
-.refs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.refs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
 .ref { display: flex; flex-direction: column; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); overflow: hidden; transition: border-color 0.2s ease, transform 0.2s ease; }
 .ref:hover { border-color: rgba(183, 148, 255, 0.35); transform: translateY(-3px); }
