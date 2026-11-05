@@ -358,7 +358,8 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px 
 .sol-visual .browser + .chip { align-self: flex-end; max-width: 190px; margin-top: -14px; position: relative; }
 
 /* References */
-.refs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.refs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1100px) { .refs { grid-template-columns: repeat(2, 1fr); } }
 
 .ref { display: flex; flex-direction: column; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); overflow: hidden; transition: border-color 0.2s ease, transform 0.2s ease; }
 .ref:hover { border-color: rgba(183, 148, 255, 0.35); transform: translateY(-3px); }
@@ -370,6 +371,7 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px 
 .ref-body h3 { font-size: 1.25rem; }
 .ref-body p { flex: 1; color: var(--muted); font-size: 0.95rem; }
 .ref-link { margin-top: 10px; color: var(--brand-light); font-size: 0.9rem; font-weight: 500; }
+@media (min-width: 1101px) { .ref-tag { min-height: 3.2em; } }
 
 /* Map in the contact block, darkened to match the page */
 .map { margin-top: 32px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
