@@ -472,8 +472,9 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px 
 /* Training and experience as logos, all at the same 32px height */
 .creds { max-width: 760px; margin: 32px auto 0; }
 .creds-label { display: block; margin-bottom: 12px; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.creds-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.cred { display: grid; place-items: center; height: 88px; padding: 0 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); }
+.creds-row { display: flex; justify-content: center; align-items: center; gap: 32px; }
+.cred { display: flex; align-items: center; gap: 32px; height: 88px; }
+.cred + .cred::before { content: "×"; color: var(--muted); font-size: 1.5rem; font-weight: 300; line-height: 1; }
 /* Sized for equal visual width (~95–115px), not equal height: the shield makes CS50 look
    narrow, the two-row ETH logo looks big at the same height */
 .cred img { display: block; width: auto; max-width: 100%; object-fit: contain; }
@@ -597,8 +598,9 @@ footer { padding: 48px 0 40px; border-top: 1px solid var(--line); margin-top: 40
   .calc, .contact { padding: 32px 20px; border-radius: 22px; }
   .calc-box { padding: 24px 20px; }
   .refs { grid-template-columns: 1fr; }
-  .creds-row { gap: 8px; }
-  .cred { height: 64px; padding: 0 8px; }
+  .creds-row, .cred { gap: 14px; }
+  .cred { height: 64px; }
+  .cred + .cred::before { font-size: 1.2rem; }
   .cred img.cs50 { height: 25px; }
   .cred img.lw { height: 22px; }
   .cred img.eth { height: 28px; }
