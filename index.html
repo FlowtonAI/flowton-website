@@ -96,6 +96,12 @@
     <!-- Hero -->
     <section class="hero">
       <canvas id="waves" aria-hidden="true"></canvas>
+      <div class="hero-float" aria-hidden="true">
+        <div class="chip alert f1" data-depth="1.3">Verpasster Anruf · 079 ··· ·· 14</div>
+        <div class="doc f2" data-depth="0.8"><b>Offerte · Entwurf</b><div class="ln"></div><div class="ln s"></div><div class="tot"><span>Total</span><span>CHF 8’450</span></div></div>
+        <div class="chip in f3" data-depth="1.0"><small>Neue Anfrage · 07:12</small>Über Ihre Website: Offerte für Wärmepumpe</div>
+        <div class="chip out f4" data-depth="1.5"><small>Rechnung · Entwurf</small>Mit QR-Code, bereit zum Senden</div>
+      </div>
       <div class="container">
         <span class="label">[ Für Sanitär, Heizung &amp; Elektro in der Ostschweiz ]</span>
         <h1>Weniger Büro.<br><span class="grad">Mehr Baustelle.</span></h1>
@@ -109,33 +115,83 @@
       </div>
     </section>
 
-    <!-- Pains -->
-    <section id="problem">
-      <div class="container">
-        <div class="pains-title reveal">
+    <!-- Pains: a pinned phone story on capable screens, a plain card grid otherwise -->
+    <section id="problem" class="story">
+      <div class="story-track">
+        <div class="story-stage">
+          <div class="container story-grid">
+            <div class="story-copy">
+              <div class="pains-title">
           <span class="label">[ Der Alltag ]</span>
           <h2>Kommt Ihnen das <span class="grad">bekannt vor?</span></h2>
         </div>
-        <div class="pains">
-          <div class="pain reveal">
-            <span class="num">01</span>
-            <h3>Ihre Website sieht auf dem Handy aus wie 2012.</h3>
-            <p>Kunden klicken weg, bevor sie Ihre Nummer finden. Bewerber auch.</p>
-          </div>
-          <div class="pain reveal">
-            <span class="num">02</span>
-            <h3>Das Telefon klingelt, während Sie unter dem Lavabo liegen.</h3>
-            <p>Der Kunde wartet nicht auf den Rückruf. Er wählt die nächste Nummer auf der Liste.</p>
-          </div>
-          <div class="pain reveal">
-            <span class="num">03</span>
-            <h3>Offerten schreiben Sie am Samstag.</h3>
-            <p>Bis sie beim Kunden ist, ist eine Woche vorbei. Und er hat noch zwei andere angefragt.</p>
-          </div>
-          <div class="pain reveal">
-            <span class="num">04</span>
-            <h3>Die Rapporte liegen auf dem Beifahrersitz.</h3>
-            <p>Die Rechnung geht Wochen nach dem Auftrag raus. Das Geld kommt entsprechend später.</p>
+              <div class="story-bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="pains">
+              <div class="pain" data-step="1">
+                <span class="num">01</span>
+                <h3>Ihre Website sieht auf dem Handy aus wie 2012.</h3>
+                <p>Kunden klicken weg, bevor sie Ihre Nummer finden. Bewerber auch.</p>
+              </div>
+              <div class="pain" data-step="2">
+                <span class="num">02</span>
+                <h3>Das Telefon klingelt, während Sie unter dem Lavabo liegen.</h3>
+                <p>Der Kunde wartet nicht auf den Rückruf. Er wählt die nächste Nummer auf der Liste.</p>
+              </div>
+              <div class="pain" data-step="3">
+                <span class="num">03</span>
+                <h3>Offerten schreiben Sie am Samstag.</h3>
+                <p>Bis sie beim Kunden ist, ist eine Woche vorbei. Und er hat noch zwei andere angefragt.</p>
+              </div>
+              <div class="pain" data-step="4">
+                <span class="num">04</span>
+                <h3>Die Rapporte liegen auf dem Beifahrersitz.</h3>
+                <p>Die Rechnung geht Wochen nach dem Auftrag raus. Das Geld kommt entsprechend später.</p>
+              </div>
+                <div class="pain turn" data-step="5">
+                  <h3>So muss es nicht bleiben.</h3>
+                  <p>Verpassen Sie einen Anruf, bekommt der Kunde sofort ein SMS. Sie bekommen Adresse und Anliegen aufs Handy und rufen zurück, wenn Sie Zeit haben.</p>
+                  <a class="turn-link" href="#loesungen">Sehen Sie, was wir bauen ↓</a>
+                </div>
+              </div>
+            </div>
+            <div class="phone-wrap" aria-hidden="true">
+              <div class="phone">
+                <div class="scr scr-old" data-s="1">
+                  <div class="oldsite">
+                    <div class="o-head">MUSTER HAUSTECHNIK AG</div>
+                    <div class="o-nav">Home | Über uns | Dienstleistungen | Kontakt</div>
+                    <div class="o-body">
+                      <div class="o-col"><b>Herzlich Willkommen auf unserer Homepage!</b><i></i><i></i><i></i><i class="s"></i><i></i><i></i><i class="s"></i></div>
+                      <div class="o-side"><span></span><i></i><i></i><i class="s"></i></div>
+                    </div>
+                    <div class="o-count">Sie sind Besucher Nr. 004211</div>
+                  </div>
+                </div>
+                <div class="scr scr-call" data-s="2">
+                  <div class="c-avatar"></div>
+                  <b>Kunde</b>
+                  <small>079 ··· ·· 14</small>
+                  <em class="c-state">ruft an …</em>
+                  <em class="c-missed">Verpasster Anruf</em>
+                  <div class="c-btns"><span class="no"></span><span class="yes"></span></div>
+                </div>
+                <div class="scr scr-lock" data-s="3">
+                  <small>Samstag</small>
+                  <b class="clock">09:14</b>
+                  <div class="note"><small>Erinnerungen</small>Offerten schreiben: Huber, Keller, Meier</div>
+                </div>
+                <div class="scr scr-lock" data-s="4">
+                  <small>Dienstag</small>
+                  <b class="clock">21:47</b>
+                  <div class="note"><small>Notizen</small>11 Rapporte abtippen und verrechnen</div>
+                </div>
+                <div class="scr scr-sms" data-s="5">
+                  <div class="chip alert">Verpasster Anruf · 079 ··· ·· 14</div>
+                  <div class="chip out"><small>SMS automatisch · 10:42</small>Wir sind auf der Baustelle. Schreiben Sie uns Adresse und Anliegen, wir rufen innert 2 Stunden zurück.</div>
+                  <div class="chip in"><small>Antwort · 10:44</small>Boiler tropft, Rosenbergstrasse 12</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

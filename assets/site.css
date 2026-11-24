@@ -624,3 +624,123 @@ footer { padding: 48px 0 40px; border-top: 1px solid var(--line); margin-top: 40
   .calc-result .big { font-size: 2.2rem; }
   .cta-meta { font-size: 0.8rem; }
 }
+
+/* ───────── Immersive layer ───────── */
+
+/* Hero depth: waves far, copy middle, product moments near. JS moves each plane at its own
+   rate on scroll and pointer. Only on wide screens, where the moments sit beside the headline. */
+.hero-float { display: none; }
+@media (min-width: 1280px) {
+  .hero-float { display: block; position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+  .hero-float > * { position: absolute; will-change: transform; box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.7); }
+  .hero-float .chip { max-width: 220px; background: rgba(22, 18, 34, 0.72); }
+  .hero-float .chip.out { background: rgba(70, 34, 130, 0.72); }
+  .hero-float .f1 { left: 5%; top: 24%; }
+  .hero-float .f2 { right: 6%; top: 22%; transform: rotate(3deg); }
+  .hero-float .f3 { left: 7%; bottom: 20%; }
+  .hero-float .f4 { right: 5%; bottom: 22%; }
+  .hero-float.on > * { opacity: 0; animation: float-in 1s cubic-bezier(.2, .7, .2, 1) forwards; }
+  .hero-float.on .f2 { animation-delay: 0.15s; }
+  .hero-float.on .f3 { animation-delay: 0.3s; }
+  .hero-float.on .f4 { animation-delay: 0.45s; }
+}
+@keyframes float-in { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
+.hero .container, #waves { will-change: transform; }
+
+/* Pains story. Without .story-on (no JS, reduced motion) this stays the plain card grid. */
+.story-bar, .phone-wrap, .pain.turn { display: none; }
+
+.story-on { padding: 0; }
+.story-on .story-track { position: relative; height: var(--track, 560vh); }
+.story-on .story-stage { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; overflow: hidden; }
+.story-on .story-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; width: 100%; }
+.story-on .pains-title { text-align: left; margin-bottom: 28px; }
+.story-on .story-bar { display: flex; gap: 6px; margin-bottom: 28px; max-width: 240px; }
+.story-bar i { flex: 1; height: 3px; border-radius: 2px; background: var(--line-2); transition: background 0.4s ease; }
+.story-bar i.on { background: var(--brand-light); }
+
+.story-on .pains { display: grid; grid-template-columns: 1fr; }
+.story-on .pain { grid-area: 1 / 1; display: block; padding: 32px; opacity: 0; transform: translateY(28px); transition: opacity 0.5s ease, transform 0.6s cubic-bezier(.2, .7, .2, 1); pointer-events: none; }
+.story-on .pain.on { opacity: 1; transform: none; pointer-events: auto; }
+.story-on .pain.past { transform: translateY(-28px); }
+.story-on .pain .num { display: none; }
+.story-on .pain h3 { font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.2; letter-spacing: -0.02em; }
+.story-on .pain p { font-size: 1.05rem; max-width: 46ch; }
+.story-on .pain.turn { background: rgba(124, 58, 237, 0.14); border-color: rgba(183, 148, 255, 0.35); }
+.turn-link { display: inline-block; margin-top: 18px; color: var(--brand-light); font-weight: 600; }
+
+.story-on .phone-wrap { display: flex; justify-content: center; }
+.phone {
+  position: relative; width: 270px; height: 550px; border-radius: 44px; padding: 12px;
+  background: #15121f; border: 1px solid var(--line-2);
+  box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.8), inset 0 0 0 2px rgba(255, 255, 255, 0.04);
+  transition: transform 0.6s cubic-bezier(.2, .7, .2, 1);
+}
+.phone::before { content: ""; position: absolute; top: 20px; left: 50%; width: 76px; height: 20px; margin-left: -38px; border-radius: 12px; background: #000; z-index: 2; }
+.scr { position: absolute; inset: 12px; border-radius: 33px; overflow: hidden; opacity: 0; transition: opacity 0.5s ease; display: flex; flex-direction: column; }
+.scr.on { opacity: 1; }
+
+/* 1: a desktop-era site squeezed onto a phone */
+.scr-old { background: #c9c6bd; }
+.oldsite { width: 620px; transform: scale(0.395); transform-origin: 0 0; font-family: "Times New Roman", serif; color: #111; background: #efece4; min-height: 1300px; }
+.o-head { background: #0b3d91; color: #ffef6b; font-size: 34px; font-weight: 700; padding: 70px 20px 18px; letter-spacing: 2px; }
+.o-nav { background: #d4d0c8; color: #00e; text-decoration: underline; font-size: 18px; padding: 8px 20px; border-bottom: 2px solid #888; }
+.o-body { display: flex; gap: 20px; padding: 20px; }
+.o-col { flex: 1; }
+.o-col b { display: block; font-size: 26px; margin-bottom: 16px; color: #800; }
+.oldsite i { display: block; height: 10px; background: #a9a59b; margin-bottom: 12px; }
+.oldsite i.s { width: 55%; margin-bottom: 26px; }
+.o-side { width: 170px; }
+.o-side span { display: block; height: 130px; background: #8fa7c9; border: 3px ridge #ccc; margin-bottom: 14px; }
+.o-count { margin: 20px; padding: 6px 10px; display: inline-block; background: #000; color: #0f0; font-family: monospace; font-size: 18px; }
+
+/* 2: the call you can't take */
+.scr-call { background: linear-gradient(180deg, #2a2540, #120f1d); align-items: center; padding-top: 110px; text-align: center; color: #fff; }
+.c-avatar { width: 84px; height: 84px; border-radius: 50%; background: #3b3452; margin-bottom: 16px; }
+.scr-call b { font-size: 1.35rem; font-weight: 600; }
+.scr-call small { color: var(--muted); margin-top: 2px; }
+.scr-call em { font-style: normal; font-size: 0.85rem; margin-top: 10px; }
+.c-state { color: var(--muted); }
+.c-missed { display: none; color: #f87171; font-weight: 600; }
+.c-btns { margin-top: auto; margin-bottom: 64px; display: flex; gap: 90px; }
+.c-btns span { width: 62px; height: 62px; border-radius: 50%; }
+.c-btns .no { background: #ef4444; }
+.c-btns .yes { background: #22c55e; }
+.scr-call.on:not(.missed) .c-avatar { animation: ring 1s ease-in-out infinite; }
+.scr-call.missed .c-state, .scr-call.missed .c-btns { display: none; }
+.scr-call.missed .c-missed { display: block; }
+.scr-call.missed .c-avatar { box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.6); }
+@keyframes ring { 0%, 100% { transform: rotate(0); } 20% { transform: rotate(-9deg); } 40% { transform: rotate(9deg); } 60% { transform: rotate(-5deg); } 80% { transform: rotate(5deg); } }
+
+/* 3 + 4: lock screens with the evening and weekend reminders */
+.scr-lock { background: radial-gradient(120% 70% at 50% 0%, #3a2466, #110e1b 70%); color: #fff; align-items: center; padding: 70px 14px 0; }
+.scr-lock > small { color: #d6cfee; font-size: 0.85rem; }
+.clock { font-size: 4.2rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 26px; }
+.note { width: 100%; padding: 12px 14px; border-radius: 18px; background: rgba(255, 255, 255, 0.14); backdrop-filter: blur(8px); font-size: 0.85rem; line-height: 1.4; }
+.note small { display: block; color: #d6cfee; font-size: 0.7rem; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* 5: the turn. The same missed call, answered for you */
+.scr-sms { background: #0f0c18; padding: 64px 12px 0; gap: 12px; }
+.scr-sms .chip { max-width: 92%; opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.scr-sms.on .chip { opacity: 1; transform: none; }
+.scr-sms.on .chip:nth-child(2) { transition-delay: 0.5s; }
+.scr-sms.on .chip:nth-child(3) { transition-delay: 1.1s; }
+
+@media (max-width: 1000px) {
+  .story-on .story-grid { gap: 32px; }
+  .phone { transform: scale(0.85); }
+}
+
+/* Phones: the phone sits on top, the current line underneath */
+@media (max-width: 720px) {
+  .story-on .story-stage { align-items: flex-start; padding-top: 92px; }
+  .story-on .story-grid { grid-template-columns: 1fr; gap: 0; }
+  .story-on .story-copy { order: 2; }
+  .story-on .pains-title { display: none; }
+  .story-on .story-bar { margin: 0 auto 14px; }
+  .story-on .phone-wrap { order: 1; height: min(330px, 42svh); margin-bottom: 12px; }
+  .story-on .phone { transform: scale(var(--phone-s, 0.58)); transform-origin: 50% 0; }
+  .story-on .pain { padding: 22px 20px; }
+  .story-on .pain h3 { font-size: 1.3rem; }
+  .story-on .pain p { font-size: 0.95rem; }
+}
