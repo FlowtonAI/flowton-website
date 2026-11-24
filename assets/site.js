@@ -1,7 +1,7 @@
 // Strings the script writes itself, per page language (<html lang>)
 const strings = {
-  de: { locale: 'de-CH', hours: 'Std.', subject: 'Gratis-Check: ', company: 'Betrieb', email: 'E-Mail', phone: 'Telefon' },
-  en: { locale: 'en-CH', hours: 'hrs', subject: 'Free check: ', company: 'Company', email: 'Email', phone: 'Phone' }
+  de: { locale: 'de-CH', hours: 'Std.', subject: 'Erstgespräch: ', company: 'Betrieb', email: 'E-Mail', phone: 'Telefon' },
+  en: { locale: 'en-CH', hours: 'hrs', subject: 'Intro call: ', company: 'Company', email: 'Email', phone: 'Phone' }
 };
 const copy = strings[document.documentElement.lang.slice(0, 2)] || strings.de;
 
