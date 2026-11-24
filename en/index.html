@@ -96,6 +96,12 @@
     <!-- Hero -->
     <section class="hero">
       <canvas id="waves" aria-hidden="true"></canvas>
+      <div class="hero-float" aria-hidden="true">
+        <div class="chip alert f1" data-depth="1.3">Missed call · 079 ··· ·· 14</div>
+        <div class="doc f2" data-depth="0.8"><b>Quote · Draft</b><div class="ln"></div><div class="ln s"></div><div class="tot"><span>Total</span><span>CHF 8’450</span></div></div>
+        <div class="chip in f3" data-depth="1.0"><small>New enquiry · 07:12</small>Via your website: quote for a heat pump</div>
+        <div class="chip out f4" data-depth="1.5"><small>Invoice · Draft</small>With QR code, ready to send</div>
+      </div>
       <div class="container">
         <span class="label">[ For plumbing, heating &amp; electrical in Eastern Switzerland ]</span>
         <h1>Less office.<br><span class="grad">More job site.</span></h1>
@@ -109,33 +115,83 @@
       </div>
     </section>
 
-    <!-- Pains -->
-    <section id="problem">
-      <div class="container">
-        <div class="pains-title reveal">
+    <!-- Pains: a pinned phone story on capable screens, a plain card grid otherwise -->
+    <section id="problem" class="story">
+      <div class="story-track">
+        <div class="story-stage">
+          <div class="container story-grid">
+            <div class="story-copy">
+              <div class="pains-title">
           <span class="label">[ Everyday life ]</span>
           <h2>Sound <span class="grad">familiar?</span></h2>
         </div>
-        <div class="pains">
-          <div class="pain reveal">
-            <span class="num">01</span>
-            <h3>Your website looks like 2012 on a phone.</h3>
-            <p>Customers leave before they find your number. So do job applicants.</p>
-          </div>
-          <div class="pain reveal">
-            <span class="num">02</span>
-            <h3>The phone rings while you're lying under a sink.</h3>
-            <p>The customer doesn't wait for a callback. They dial the next number on the list.</p>
-          </div>
-          <div class="pain reveal">
-            <span class="num">03</span>
-            <h3>You write quotes on Saturdays.</h3>
-            <p>By the time it reaches the customer, a week has passed. And they asked two other firms too.</p>
-          </div>
-          <div class="pain reveal">
-            <span class="num">04</span>
-            <h3>The job reports sit on the passenger seat.</h3>
-            <p>The invoice goes out weeks after the job. The money arrives just as late.</p>
+              <div class="story-bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="pains">
+              <div class="pain" data-step="1">
+                <span class="num">01</span>
+                <h3>Your website looks like 2012 on a phone.</h3>
+                <p>Customers leave before they find your number. So do job applicants.</p>
+              </div>
+              <div class="pain" data-step="2">
+                <span class="num">02</span>
+                <h3>The phone rings while you're lying under a sink.</h3>
+                <p>The customer doesn't wait for a callback. They dial the next number on the list.</p>
+              </div>
+              <div class="pain" data-step="3">
+                <span class="num">03</span>
+                <h3>You write quotes on Saturdays.</h3>
+                <p>By the time it reaches the customer, a week has passed. And they asked two other firms too.</p>
+              </div>
+              <div class="pain" data-step="4">
+                <span class="num">04</span>
+                <h3>The job reports sit on the passenger seat.</h3>
+                <p>The invoice goes out weeks after the job. The money arrives just as late.</p>
+              </div>
+                <div class="pain turn" data-step="5">
+                  <h3>It doesn't have to stay this way.</h3>
+                  <p>Miss a call, and the customer gets a text right away. You get their address and request on your phone and call back when you have time.</p>
+                  <a class="turn-link" href="#loesungen">See what we build ↓</a>
+                </div>
+              </div>
+            </div>
+            <div class="phone-wrap" aria-hidden="true">
+              <div class="phone">
+                <div class="scr scr-old" data-s="1">
+                  <div class="oldsite">
+                    <div class="o-head">MUSTER BUILDING SERVICES LTD</div>
+                    <div class="o-nav">Home | About us | Services | Contact</div>
+                    <div class="o-body">
+                      <div class="o-col"><b>A warm welcome to our homepage!</b><i></i><i></i><i></i><i class="s"></i><i></i><i></i><i class="s"></i></div>
+                      <div class="o-side"><span></span><i></i><i></i><i class="s"></i></div>
+                    </div>
+                    <div class="o-count">You are visitor no. 004211</div>
+                  </div>
+                </div>
+                <div class="scr scr-call" data-s="2">
+                  <div class="c-avatar"></div>
+                  <b>Customer</b>
+                  <small>079 ··· ·· 14</small>
+                  <em class="c-state">calling …</em>
+                  <em class="c-missed">Missed call</em>
+                  <div class="c-btns"><span class="no"></span><span class="yes"></span></div>
+                </div>
+                <div class="scr scr-lock" data-s="3">
+                  <small>Saturday</small>
+                  <b class="clock">09:14</b>
+                  <div class="note"><small>Reminders</small>Write quotes: Huber, Keller, Meier</div>
+                </div>
+                <div class="scr scr-lock" data-s="4">
+                  <small>Tuesday</small>
+                  <b class="clock">21:47</b>
+                  <div class="note"><small>Notes</small>Type up and invoice 11 job reports</div>
+                </div>
+                <div class="scr scr-sms" data-s="5">
+                  <div class="chip alert">Missed call · 079 ··· ·· 14</div>
+                  <div class="chip out"><small>Automatic text · 10:42</small>We're on a job site. Send us your address and what you need, we'll call back within 2 hours.</div>
+                  <div class="chip in"><small>Reply · 10:44</small>Boiler dripping, Rosenbergstrasse 12</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

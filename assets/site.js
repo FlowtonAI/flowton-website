@@ -170,3 +170,87 @@ form.addEventListener('submit', async (e) => {
   }).observe(canvas);
   loop();
 })();
+
+// Immersive layer. Both pieces are skipped under reduced motion, which leaves the plain page.
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Hero depth: each plane moves at its own rate, so the waves feel far and the moments near
+(() => {
+  if (reducedMotion) return;
+  const hero = document.querySelector('.hero');
+  const waves = document.getElementById('waves');
+  const copyPlane = hero.querySelector('.container');
+  const float = hero.querySelector('.hero-float');
+  const items = float ? [...float.children] : [];
+  if (float) float.classList.add('on');
+  let mx = 0, my = 0, tx = 0, ty = 0, raf = 0;
+
+  const render = () => {
+    raf = 0;
+    tx += (mx - tx) * 0.08;
+    ty += (my - ty) * 0.08;
+    const y = Math.min(window.scrollY, window.innerHeight);
+    waves.style.transform = `translate3d(${tx * -8}px, ${y * 0.25 + ty * -6}px, 0)`;
+    copyPlane.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
+    copyPlane.style.opacity = String(1 - Math.min(y / (window.innerHeight * 0.85), 1) * 0.6);
+    items.forEach((el) => {
+      const d = Number(el.dataset.depth || 1);
+      el.style.transform = `translate3d(${tx * 22 * d}px, ${y * -0.35 * d + ty * 16 * d}px, 0)`;
+    });
+    if (Math.abs(mx - tx) > 0.001 || Math.abs(my - ty) > 0.001) raf = requestAnimationFrame(render);
+  };
+  const kick = () => { if (!raf) raf = requestAnimationFrame(render); };
+
+  window.addEventListener('scroll', () => { if (window.scrollY < window.innerHeight * 1.2) kick(); }, { passive: true });
+  hero.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    mx = e.clientX / window.innerWidth - 0.5;
+    my = e.clientY / window.innerHeight - 0.5;
+    kick();
+  });
+  kick();
+})();
+
+// Pains story: the section pins and scroll steps through four bad days on one phone,
+// then the same missed call gets answered. The last step gets the most scroll room.
+(() => {
+  const story = document.querySelector('.story');
+  if (!story || reducedMotion) return;
+  story.classList.add('story-on');
+
+  const track = story.querySelector('.story-track');
+  const pains = [...story.querySelectorAll('.pain')];
+  const screens = [...story.querySelectorAll('.scr')];
+  const bars = [...story.querySelectorAll('.story-bar i')];
+  const call = story.querySelector('.scr-call');
+  const wrap = story.querySelector('.phone-wrap');
+  const weights = [1, 1.2, 1, 1, 1.6];
+  const total = weights.reduce((a, b) => a + b, 0);
+  let current = -1;
+
+  const size = () => {
+    track.style.setProperty('--track', (100 + total * 75) + 'vh');
+    const s = Math.min(wrap.clientHeight / 550, 1);
+    if (window.innerWidth <= 720) story.style.setProperty('--phone-s', s.toFixed(3));
+  };
+
+  const update = () => {
+    const r = track.getBoundingClientRect();
+    const run = track.offsetHeight - window.innerHeight;
+    const p = Math.min(Math.max(-r.top / run, 0), 0.9999) * total;
+    let step = 0, acc = 0;
+    while (step < weights.length - 1 && p >= acc + weights[step]) acc += weights[step++];
+    const within = (p - acc) / weights[step];
+    call.classList.toggle('missed', step === 1 && within > 0.55);
+    if (step === current) return;
+    current = step;
+    pains.forEach((el, i) => { el.classList.toggle('on', i === step); el.classList.toggle('past', i < step); });
+    screens.forEach((el, i) => el.classList.toggle('on', i === step));
+    bars.forEach((el, i) => el.classList.toggle('on', i <= step));
+  };
+  size();
+  update();
+  // Straight from the scroll event: the work is one rect read, and classes only change on a new step
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', () => { size(); current = -1; update(); });
+})();
